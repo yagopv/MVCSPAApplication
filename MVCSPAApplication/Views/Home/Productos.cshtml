@@ -1,0 +1,60 @@
+﻿@model IEnumerable<MVCSPAApplication.ViewModels.ProductoVM>
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="page-header">
+		    <h1>Mostrando productos<small>&nbsp;&nbsp;&nbsp;&nbsp;@ViewBag.Categoria</small></h1>
+	    </div>
+    </div>			
+</div>
+
+
+<div class="row-fluid">
+    <div class="span4">
+       <div class="well helper-margin-top">
+		    <ul class="nav nav-list">
+			    <li class="nav-header">
+				    Escoge una categoria
+			    </li>
+			    <li class="active">
+				    <li>@Html.ActionLink("Productos categoria 1", "Productos", new { categoria=1 }, new { data_ajax = "true", @class="helper-display-inline" })</li>
+			    </li>
+			    <li>
+				    <li>@Html.ActionLink("Productos categoria 2", "Productos", new { categoria=2 }, new { data_ajax = "true", @class="helper-display-inline" })</li>
+			    </li>
+			    <li>
+				    <li>@Html.ActionLink("Productos categoria 3", "Productos", new { categoria=3 }, new { data_ajax = "true", @class="helper-display-inline" })</li>
+			    </li>
+		    </ul>		
+        </div>
+    </div>
+
+    @{ int counter = 0; }
+
+    <div class="span8">
+        @foreach (var item in Model)
+        {
+            if (counter == 0)
+            {
+		        @:<div class="row-fluid">
+            }
+			        <div class="span6 prod">                        
+				        <h2>@item.Nombre</h2>
+                        <p><span class="label label-success">@ViewBag.Categoria</span></p>
+				        <p>@item.Descripcion</p>
+				        @Html.Partial("_productButtons")
+			        </div>
+            counter++;
+            if (counter==2)
+            {
+                @:</div>
+                counter = 0;
+            }
+        }
+        @if (counter != 0)
+        {
+            @:</div>
+        }
+    </div>
+</div>
+

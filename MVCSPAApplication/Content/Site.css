@@ -1,0 +1,53 @@
+/* Clase para cada producto mostrado */
+.prod {
+	background-color: #F5F5F5;	
+	position:relative;
+    border: 2px solid #888888;
+	    -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	     box-sizing: border-box; 
+	    -moz-border-radius: 5px;
+         border-radius: 5px;   
+        -moz-box-shadow: 10px 10px 5px #888;
+        -webkit-box-shadow: 10px 10px 5px #888;
+        box-shadow: 10px 10px 5px #888;	
+	padding:1em;
+	margin-top:2% !important;
+}
+
+/* Sticky footer */
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -3em;    
+}
+
+
+.push {
+   height: 4em;
+}
+
+.footer
+{
+    padding: 2% 2% 2% 5%;
+    background-color: #3F9FD9;
+    height: 4em;
+    margin-left:-20px;
+    margin-right: -20px;
+}
+
+    .footer h3
+    {
+        color: #F5F5F5;        
+    }
+
+.container-fluid
+{
+    padding-top: 60px;
+}

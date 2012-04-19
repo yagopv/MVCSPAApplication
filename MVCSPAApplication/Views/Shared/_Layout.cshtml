@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Ejemplo de aplicacion SPA con Bootstrap 2.0</title>
+        <meta name="author" content="Yago Perez Vazquez">
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="/Content/css/bootstrap.css" rel="stylesheet">
+        <link href="/Content/css/bootstrap-responsive.css" rel="stylesheet">
+	    <link href="/Content/Site.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width" />
+    </head>
+  <body>
+    <div class="wrapper">
+        @* Barra de navegacion *@
+	    <div class="navbar navbar-fixed-top">
+	      <div class="navbar-inner">
+		    <div class="container">
+		      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			    <span class="icon-bar"></span>
+			    <span class="icon-bar"></span>
+			    <span class="icon-bar"></span>
+		      </a>
+		      <a class="brand" href="#">Navegacion</a>
+		      <div class="nav-collapse">
+			    <ul class="nav">
+			      <li class="active">@Html.ActionLink("Inicio","Index",null,new { data_ajax="true"})</li>
+			      <li>@Html.ActionLink("Productos", "Productos", new { categoria=1 }, new { data_ajax = "true" })</li>
+			      <li>@Html.ActionLink("Contacto", "Contacto", null , new { data_ajax = "true" })</li>
+			      <li>@Html.ActionLink("Acerca de", "Acercade", null, new { data_ajax = "true" })</li>
+			    </ul>
+		      </div>
+		    </div>
+	      </div>
+	    </div>
+	    
+        @* Contenedor para recarga de pagina *@
+	    <div class="container-fluid">
+            @RenderBody()
+	    </div>
+        <div class="push"></div>
+    </div>
+	
+    @* Pie de pagina *@
+    <div class="footer">
+	    <h3>@@Yago Perez Vazquez 2012</h3>
+    </div>
+
+    <script src="/Scripts/jquery.js"></script>
+	<script src="/Scripts/jquery.ui.widget.min.js"></script>	
+	<script src="/Scripts/spalinks.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+	<script src="/Scripts/modernizr.js"></script>	
+    <script type="text/javascript">
+        $(document).ready(function () {            
+			if (Modernizr.history) {
+				$("body").spalinks({ target: $(".container-fluid") });
+			}
+        });
+	</script>
+  </body>
+</html>
+
