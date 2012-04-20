@@ -54,7 +54,7 @@
     <script type="text/javascript">
         $(document).ready(function () {            
 			if (Modernizr.history) {
-				$("body").spalinks({ target: $(".container-fluid") });
+			    $("body").spalinks({ target: $(".container-fluid"), useloading: true, loadingdefaulttext:"Cargando..." });
 			}
         });
 	</script>
