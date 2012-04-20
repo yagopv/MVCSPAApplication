@@ -66,7 +66,7 @@
             var self = this;
             var loading;
             if (self.options.loadingdefaultclass != "") {
-                loading = $('<div id="spalinks_loader"></div>')
+                loading = $('<div id="spalinks_loader style="display:none"></div>')
 									.addClass(self.options.loadingdefaultclass)
 									.append($("<p></p>").text(self.options.loadingdefaulttext));
             } else {
